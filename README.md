@@ -58,7 +58,7 @@ KatanaHttps.awsSetup.setRegion('ap-northeast-1')
 
 //Set the port number to be listened to.
 //The default is 3000.
-//KatanaHttps.expressSetup.setPortNo('3030')
+//KatanaHttps.expressSetup.setPortNo(3030)
 
 //Set the path requested by the skill.
 //The default value is "/"
