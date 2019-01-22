@@ -12,6 +12,8 @@ npm install --save katana-alexa-https-hosting
 ```
 
 ## How to use
+**Please use a daemonization tool such as "forever" together.**
+
 ### example
 ```sample.js
 const KatanaHttps = require('katana-alexa-https-hosting')
