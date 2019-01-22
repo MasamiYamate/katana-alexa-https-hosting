@@ -1,6 +1,6 @@
 {
   "name": "katana-alexa-https-hosting",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Move Alexa skill on VPS",
   "main": "index.js",
   "scripts": {

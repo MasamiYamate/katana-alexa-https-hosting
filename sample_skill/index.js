@@ -23,29 +23,31 @@ const ErrorHandler = {
     },
     handle(handlerInput) {
 		return handlerInput.responseBuilder
-			.speak("申し訳ありません、内部エラーが発生しました。")
+			.speak('Sorry, an error occurred.')
 			.withShouldEndSession(true)
 			.getResponse();
 	}
 }
 
-//スキルビルダーのオブジェクトを生成します
-//この際にlambda()を呼ばずに呼び出すこと
+//Generate skill builder.
+//At this time, do not call "lambda ()" or "create ()".
 var skillBuilder = Alexa.SkillBuilders.standard()
         .addErrorHandlers(LaunchIntentHandler)
         .addErrorHandlers(ErrorHandler)
 
-//DynamoDBを利用する際のリージョンを設定する
+//When using DynamoDB, region setting of aws-sdk is necessary.
 KatanaHttps.awsSetup.setRegion('ap-northeast-1')
 
-//任意のポート番号を利用する場合
+//Set the port number to be listened to.
+//The default is 3000.
 //KatanaHttps.expressSetup.setPortNo('3030')
 
-//任意のパスを利用する場合
+//Set the path requested by the skill.
+//The default value is "/"
 //KatanaHttps.expressSetup.setAnyPath('/alexa/')
 
-//Skillオブジェクトを設定します
+//I will set up the skill builder that I have created.
 KatanaHttps.alexaSetup.setSkill(skillBuilder)
 
-//Skillを起動します
+//Start the skill.
 KatanaHttps.expressSetup.start()

@@ -6,5 +6,4 @@ module.exports = {
     awsSetup: awsManager,
     expressSetup: expressManager,
     alexaSetup: alexaManager
-    
 }

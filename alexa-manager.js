@@ -1,15 +1,15 @@
 var skill = null
 
 module.exports = {
+    //Set skill builder.
     setSkill: function (skillObj) {
         skill = skillObj
     },
-    handler: async function (evn , ctx , res) {
+    handler: async function (req , ctx , res) {
         console.time('Processing Time')
-        
         if (skill) {
             let resJson = skill.create()
-            resJson.invoke(evn, ctx)
+            resJson.invoke(req, ctx)
                 .then(function(skillResponse) {
                     response.status(200).send(skillResponse);
                 })
@@ -17,7 +17,6 @@ module.exports = {
             console.log('Skill object is not set.')
             res.status(401).send()
         }
-
         console.timeEnd("Processing Time")
     }
 }
