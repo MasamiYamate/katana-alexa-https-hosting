@@ -11,7 +11,7 @@ module.exports = {
             let resJson = skill.create()
             resJson.invoke(req, ctx)
                 .then(function(skillResponse) {
-                    response.status(200).send(skillResponse);
+                    res.status(200).send(skillResponse);
                 })
         }else{
             console.log('Skill object is not set.')
